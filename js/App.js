@@ -5,27 +5,29 @@ const app = express();
 const fs = require("fs");
 
 app.use(cors());
+app.json();
 
-app.get("/:Username&:Password&:Comment", (req,res) =>{
+app.post("/:Username&:Password&:Comment", (req,res) =>{
+  
+  
   const UserName = req.params.Username;
   const Password = req.params.Password;
   const Comment = req.params.Comment;
+  
+  if (UserName !=""|| Password != "" || Comment != ""){
 
-  var tempObject = {
-    Name:UserName,
-    Password:Password,
-    comment:Comment
+    req.body.Name = UserNames;
+    req.body.Password = Password;
+    req.body.comment = Comment;
+    UserInfo.push(req.body);
+    res.send(UserInfo);
   }
-  var object =JSON.parse(tempObject);
-  fs.writeFile("/UserInfo.json",object , (err) =>{
-    if (err) throw error;
-    console.log("New Data Added");
-  })
 })
 
 app.use("/get",()=>{
   res.send(UserInfo)
 })
+
 app.get ("/", (req,res)=>{
   res.send("Hello world");
 })
