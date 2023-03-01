@@ -37,7 +37,7 @@ const addInfo =  (UserInfo) =>{
     CommentBoxContent.textContent = UserInfo.comment;
 
     commentDisplay.appendChild(CommentBoxUser);
-    commentDisplay,appendChild(CommentBoxContent);
+    commentDisplay.appendChild(CommentBoxContent);
     
 
 
