@@ -23,9 +23,11 @@ app.get("/:Username&:Password&:Comment", (req,res) =>{
   })
 })
 
+app.use("/get",()=>{
+  res.send(UserInfo)
+})
 app.get ("/", (req,res)=>{
   res.send("Hello world");
 })
 
-app
 module.exports = app;
